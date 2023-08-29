@@ -49,16 +49,21 @@ console.log('array of employee data: ',  employees );
 // This function will calculate 1 employee's bonus!
 //
 function calculateIndividualEmployeeBonus( employee ) {  
-  // your logic here
-  let newEmployeeArray = [];
-  for (let i = 0; i < employee.length; i++) {
-    if( employees[i].reviewRating <= 2){
-      newEmployeeArray.push(employees[i].name);
-    }
-    return newEmployeeArray;
+  let placeholder = {
+    name: employee.name,
+    employeeNumber: employee.employeeNumber,
+    annualSalary: employee.annualSalary,
+    reviewRating: employee.reviewRating,
+    bonus: 0
   }
+  for (let i=0; i<employee.length; i++) {
+   
+  }
+
+  return placeholder
+  
 }
-console.log(calculateIndividualEmployeeBonus(employees));
+
  
 
   
