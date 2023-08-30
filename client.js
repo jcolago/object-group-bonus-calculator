@@ -78,14 +78,23 @@ function calculateIndividualEmployeeBonus(employee) {
   const bonusAmount = Math.round(employee.annualSalary * bonusPercentage);
   const totalCompensation = Number(employee.annualSalary) + bonusAmount;
 
-}
+
 return {
   name: employee.name,
   bonusPercentage: bonusPercentage,
   totalCompensation: totalCompensation
   totalBonus: bonusAmount
 
+};
 }
+
+for (let i = 0; i < employees.length; i++) {
+  const employee = employees[i];
+  const bonusData = calculateIndividualEmployeeBonus(employee);
+  
+  console.log('Employee:', employee.name);
+  console.log('Bonus Data:', bonusData);
+
  
 
   
