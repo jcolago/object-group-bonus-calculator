@@ -60,6 +60,31 @@ function calculateIndividualEmployeeBonus(employee) {
   } else if (employee.reviewRating === 5) {
     bonusPercentage = 0.1;
   }
+
+  if (employee.employeeNumber.length === 4) {
+    bonusPercentage += 0.05;
+  }
+
+  if (employee.annualSalary > 65000) {
+    bonusPercentage -= 0.01;
+  }
+
+  if (bonusPercentage > 0.13) {
+    bonusPercentage = 0.13;
+  } else if (bonusPercentage < 0) {
+    bonusPercentage = 0;
+  }
+
+  const bonusAmount = Math.round(employee.annualSalary * bonusPercentage);
+  const totalCompensation = Number(employee.annualSalary) + bonusAmount;
+
+}
+return {
+  name: employee.name,
+  bonusPercentage: bonusPercentage,
+  totalCompensation: totalCompensation
+  totalBonus: bonusAmount
+
 }
  
 
